@@ -40,6 +40,25 @@ http://localhost:3000/api/v2/seed
 - Nest
 
 
+# Production Build
+1. Crear el archivo ```.env.prod``` 
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
+
 ## Gitignore
 
 - La carpeta de mongo local la ponemos, ya que no queremos que toda la información de la BBDD la tengamos guardada en git
+
+
+# Notas
+
+Heroku redeploy sin cambios:
+```
+git commit --allow-empty -m "Tigger Heroku deploy" // Este commit es para cuando no hemos modificado nada
+git push heroku master
+```
+
